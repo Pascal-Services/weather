@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>PSWW - Het Weer</title>
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/styles.css" />
+        <!-- SEO -->
+        <meta name="description" content="Bekijk per locatie het weer" />
+        <meta
+            name="keywords"
+            content="weer, weerbericht, weerbericht per locatie, weer per locatie, weerbericht per plaats, weer per plaats, weerbericht per stad, weer per stad, weerbericht per dorp, weer per dorp, weerbericht per land, weer per land, weerbericht per werelddeel, weer per werelddeel, weerbericht per continent, weer per continent, weerbericht per provincie, weer per provincie, weerbericht per gemeente, weer per gemeente, weerbericht per postcode, weer per postcode,
+            " >
+        <meta name="author" content="Pascal Services" />
+        <meta name="robots" content="index, follow" />
+        <meta name="revisit-after" content="1 days" />
+        <meta name="language" content="nl" />
+        <meta name="generator" content="Visual Studio Code" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta property="og:title" content="PSWW - Het Weer" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://weer.psww.nl" />
+        <meta property="og:image" content="images/Pascal-Services-wit-logo.webp" />
+        <meta property="og:description" content="Bekijk per locatie het weer" />
+        <meta property="og:site_name" content="PSWW - Het Weer" />
+        <meta property="og:locale" content="nl_NL" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="images/favicon/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="images/favicon/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="images/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="images/favicon/site.webmanifest" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+    </head>
+    <body>
+        <div class="container mt-5">
+            <div class="text-center mb-4">
+                <img
+                    src="images/Pascal-Services-wit-logo.webp"
+                    alt="Pascal Services Logo"
+                    class="img-fluid mx-auto"
+                    style="max-width: 300px"
+                />
+            </div>
+
+            <div class="mx-auto" style="max-width: 400px">
+                <!-- Weer -->
+                <h1 class="text-center mb-4">
+                    <span class="fw-bold" id="plaatsnaam"></span>
+                </h1>
+                <img
+                    id="weerAfbeelding"
+                    alt="Weerfoto"
+                    class="mx-auto d-block"
+                />
+                <div class="text-center mb-4">
+                    <h2 class="fw-lighter">
+                        <span id="gradencelcius"></span> °C
+                    </h2>
+                    <p>
+                        Voelt aan als:
+                        <span id="gradencelcius_feeling"></span> °C
+                    </p>
+                </div>
+
+                <div>
+                    <form>
+                        <div class="mb-3">
+                            <label for="place" class="form-label"
+                                >Plaats:</label
+                            >
+                            <input
+                                type="text"
+                                id="plaatsnaamInput"
+                                value="Amsterdam"
+                            />
+                        </div>
+                        <button id="ophalen">Ophalen</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="text-center font-monospace fs-6 pt-4">
+                <span id="latitude"></span> °N, <span id="longitude"></span> °E
+                <div class="fw-lighter" id="coordinateURL"></div>
+            </div>
+        </div>
+
+        <!-- copyright -->
+        <div class="text-center mt-5">
+            <p class="text-white">
+                &copy; Pascal Services <span id="year" class="fw-bold"></span>
+            </p>
+        </div>
+
+        <script src="js/main.js"></script>
+        <script src="js/bootstrap/bootstrap.min.js"></script>
+    </body>
+</html>

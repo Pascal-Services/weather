@@ -1,0 +1,38 @@
+{
+    "name": "weather-backend",
+    "version": "1.0.0",
+    "description": "Dit zorgt ervoor dat het weer word opgehaald.",
+    "main": "src/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node src/index.js",
+        "dev": "nodemon src/index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Pascal-Services/weather.git"
+    },
+    "keywords": [
+        "Pascal",
+        "Services"
+    ],
+    "author": "Pascal Wiersma",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Pascal-Services/weather/issues"
+    },
+    "homepage": "https://github.com/Pascal-Services/weather#readme",
+    "dependencies": {
+        "apicache": "^1.6.3",
+        "bootstrap": "^5.3.2",
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "express-rate-limit": "^7.1.5",
+        "jquery": "^3.7.1",
+        "needle": "^3.3.1"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.2"
+    }
+}

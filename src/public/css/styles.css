@@ -1,0 +1,49 @@
+body {
+    background-color: #1E3E6D;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #ffff;
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffff;
+    outline: none;
+    color: #ffff;
+    font-size: 1.3rem;
+    padding: 0.5rem 0.7rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+}
+
+input:focus {
+    border-bottom: 1px solid #ffff;
+}
+
+input::placeholder {
+    color: #ffff;
+}
+
+button {
+    background: #1E3E6D;
+    border: 1px solid #ffff;
+    color: #ffff;
+    padding: 0.5rem 1rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
