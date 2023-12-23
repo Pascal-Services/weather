@@ -5,44 +5,50 @@ const longitude = document.querySelector("#longitude");
 const plaatsnaam = document.querySelector("#plaatsnaam");
 const ophalenButton = document.querySelector("#ophalen");
 const coordinateURL = document.querySelector("#coordinateURL");
-const gradencelcius_feeling = document.querySelector("#gradencelcius_feeling");
+const gradencelciusFeeling = document.querySelector("#gradencelcius_feeling");
 const weerAfbeelding = document.querySelector("#weerAfbeelding");
 
 ophalenButton.addEventListener("click", async (e) => {
     try {
         e.preventDefault();
-
         const plaatsnaamValue = plaatsnaamInput.value;
-
-        await getData(plaatsnaamValue);
+        await fetchData(plaatsnaamValue);
     } catch (error) {
-        await getData("Amsterdam");
+        await fetchData("Amsterdam");
     }
 });
 
-async function getData(plaatsnaamValue) {
+async function fetchData(plaatsnaamValue) {
     try {
-        const data = await fetch("/api?q=" + plaatsnaamValue);
-
+        const data = await fetch(`/api?q=${plaatsnaamValue}`);
         const res = await data.json();
-
-        plaatsnaam.innerHTML = res.name;
-        gradencelcius.innerHTML = calculateCelsius(res.main.temp).toFixed(1);
-        gradencelcius_feeling.innerHTML = calculateCelsius(
-            res.main.feels_like
-        ).toFixed(1);
-        latitude.innerHTML = res.coord.lat;
-        longitude.innerHTML = res.coord.lon;
-        weerAfbeelding.src = res.weather[0].icon;
-        coordinateURL.innerHTML = `<a href="https://www.google.com/maps/search/?api=1&query=${res.coord.lat},${res.coord.lon}" target="_blank">Google Maps</a>`;
+        updateUI(res);
     } catch (error) {
-        plaatsnaam.innerHTML = "Plaatsnaam niet gevonden";
+        displayError();
     }
+}
+
+function updateUI(weatherData) {
+    plaatsnaam.innerHTML = weatherData.name;
+    gradencelcius.innerHTML = calculateCelsius(weatherData.main.temp).toFixed(
+        1
+    );
+    gradencelciusFeeling.innerHTML = calculateCelsius(
+        weatherData.main.feels_like
+    ).toFixed(1);
+    latitude.innerHTML = weatherData.coord.lat;
+    longitude.innerHTML = weatherData.coord.lon;
+    weerAfbeelding.src = weatherData.weather[0].icon;
+    coordinateURL.innerHTML = `<a href="https://www.google.com/maps/search/?api=1&query=${weatherData.coord.lat},${weatherData.coord.lon}" target="_blank">Google Maps</a>`;
+}
+
+function displayError() {
+    plaatsnaam.innerHTML = "Plaatsnaam niet gevonden";
 }
 
 // first load
 document.addEventListener("DOMContentLoaded", async () => {
-    getData("Amsterdam");
+    await fetchData("Amsterdam");
 });
 
 // calculate kelvin to celsius
@@ -50,5 +56,6 @@ function calculateCelsius(kelvin) {
     return kelvin - 273.15;
 }
 
+// current year
 const currentYear = new Date().getFullYear();
 document.querySelector("#year").innerHTML = currentYear;
