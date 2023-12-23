@@ -7,6 +7,9 @@ The Weather App is a simple yet powerful application that allows users to get re
 
 User-Friendly Interface: The app features a clean and intuitive design.
 
+## Check demo:
+https://weer.psww.nl/
+
 ## How to Use
 - Clone this project
 - Fill the `.env.example` in with you're api keys and change other settings.
