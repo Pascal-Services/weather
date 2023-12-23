@@ -1,5 +1,7 @@
 # Weather App
 
+![image](https://github.com/Pascal-Services/weather/assets/20664281/91b43405-018a-4ab7-a1f8-f5676d5ac9a1)
+
 ## Description
 The Weather App is a simple yet powerful application that allows users to get real-time weather information for any location.
 
