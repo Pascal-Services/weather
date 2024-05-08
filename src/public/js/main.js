@@ -25,6 +25,7 @@ async function fetchData(plaatsnaamValue) {
         updateUI(res);
     } catch (error) {
         displayError();
+        console.error(error);
     }
 }
 
